@@ -3,7 +3,7 @@ from cadastro import cadastrar, listar
 from busca import buscar
 from emprestimo import registrarEmprestimo
 from devolucoes import devolucoesEmprestimo
-from relatorio import gerarRelatorioGeral, gerarRelatorioRapido, escolherRelatorio
+from relatorio import escolherRelatorio
 from registro import registrar
 
 from datetime import datetime, timedelta
@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
             case 7:
                 registrar(acervo,FORMATO)
-                
+
             case 8:
                 print('Encerrando programa')
                 break

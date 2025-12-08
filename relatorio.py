@@ -21,14 +21,14 @@ def escolherRelatorio(conj,acervo):
 
     match opcao:
         case 1:
-            gerarRelatorioGeral(conj,acervo)
+            _gerarRelatorioGeral(conj,acervo)
         case 2:
-            gerarRelatorioRapido(acervo)
+            _gerarRelatorioRapido(acervo)
 
 def _calcularMediaAvaliacoes(livro):
     '''implementar'''
 
-def gerarRelatorioGeral(conj,acervo):
+def _gerarRelatorioGeral(conj,acervo):
 
     totalLivros = len(acervo)
     totalEmprestados = len(conj)
@@ -111,7 +111,7 @@ def gerarRelatorioGeral(conj,acervo):
                 file.write(f'- {titulo} ({codigo}): {media}\n')
 
 
-def gerarRelatorioRapido(acervo):
+def _gerarRelatorioRapido(acervo):
     
     with open('relatorio_rapido.txt', 'w') as file:
         for livro in acervo:
