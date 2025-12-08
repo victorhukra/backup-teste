@@ -1,6 +1,6 @@
 def escolherRelatorio(conj,acervo):
     if len(acervo)==0:
-        print('\nNão há livros no acervo')
+        print('\nNão há livros no acervo.')
         return
     
     while True:
@@ -14,10 +14,10 @@ def escolherRelatorio(conj,acervo):
             break
 
         except IndexError:
-            print('Digite um número correspondente')
+            print('Digite um número correspondente.')
 
         except ValueError:
-            print('Digite valor válido')
+            print('Digite valor válido.')
 
     match opcao:
         case 1:
@@ -119,6 +119,7 @@ def _gerarRelatorioRapido(acervo):
             else:
                 titulo = 'Sem título'
             file.write(titulo + '\n')
+
 
 
 
