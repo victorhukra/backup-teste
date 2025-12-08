@@ -5,10 +5,6 @@ from emprestimo import registrarEmprestimo
 from devolucoes import devolucoesEmprestimo
 from relatorio import escolherRelatorio
 from registro import registrar
-import struct
-
-FORMATO='10s50s50si20s'
-TAMANHO=struct.calcsize(FORMATO)
 
 
 if __name__ == "__main__":
