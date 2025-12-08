@@ -12,7 +12,7 @@ def buscar(acervo):
                 raise ValueError
             break
         except ValueError:
-            print('Digite um número correspondente')
+            print('Digite um número correspondente.')
 
     busca=str(input('Digite o que busca: '))
 
@@ -35,5 +35,6 @@ def buscar(acervo):
                     print(f'\nLivro encontrado:',livro['codigo'],livro['titulo'],livro['autor'],livro['ano'],livro['categoria'])
                     return
         
-    print('Nenhum livro encontrado')
+    print('Nenhum livro encontrado.')
+
 
