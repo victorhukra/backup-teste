@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 
 def registrarEmprestimo(conj, acervo):
     if len(acervo)==0:
-        print('\nNão há livros no acervo')
+        print('\nNão há livros no acervo.')
         return
 
     data = datetime.today()
@@ -44,3 +44,4 @@ def registrarEmprestimo(conj, acervo):
 
 
     print('\nEmpréstimo registrado com sucesso.')
+
