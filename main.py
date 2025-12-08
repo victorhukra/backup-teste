@@ -5,9 +5,6 @@ from emprestimo import registrarEmprestimo
 from devolucoes import devolucoesEmprestimo
 from relatorio import escolherRelatorio
 from registro import registrar
-
-from datetime import datetime, timedelta
-import random
 import struct
 
 FORMATO='10s50s50si20s'
