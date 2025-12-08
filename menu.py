@@ -12,11 +12,15 @@ def menuInfo():
     while True:
         try:
             opcao = int(input("Digite a opção desejada: "))
+
             if opcao<1 or opcao>8:
                 raise IndexError
+            
             return opcao
+        
         except ValueError:
             print('Digite um número inteiro correspondente')
+            
         except IndexError:
             print("Entrada inválida, digite um número de 1 a 8")
 

@@ -6,7 +6,6 @@ from devolucoes import devolucoesEmprestimo
 from relatorio import escolherRelatorio
 from registro import registrar
 
-
 if __name__ == "__main__":
     acervo=[]
     conjuntoEmprestados = set()
@@ -34,7 +33,7 @@ if __name__ == "__main__":
                 escolherRelatorio(conjuntoEmprestados,acervo)
 
             case 7:
-                registrar(acervo,FORMATO)
+                registrar(acervo)
 
             case 8:
                 print('Encerrando programa')

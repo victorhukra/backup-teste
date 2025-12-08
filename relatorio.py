@@ -110,7 +110,6 @@ def _gerarRelatorioGeral(conj,acervo):
                 media = _calcularMediaAvaliacoes(livro)
                 file.write(f'- {titulo} ({codigo}): {media}\n')
 
-
 def _gerarRelatorioRapido(acervo):
     
     with open('relatorio_rapido.txt', 'w') as file:
