@@ -36,5 +36,5 @@ if __name__ == "__main__":
                 registrar(acervo)
 
             case 8:
-                print('Encerrando programa')
+                print('Encerrando programa.')
                 break
