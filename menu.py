@@ -19,8 +19,9 @@ def menuInfo():
             return opcao
         
         except ValueError:
-            print('Digite um número inteiro correspondente')
+            print('Digite um número inteiro correspondente.')
             
         except IndexError:
-            print("Entrada inválida, digite um número de 1 a 8")
+            print('Entrada inválida, digite um número de 1 a 8.')
+
 
