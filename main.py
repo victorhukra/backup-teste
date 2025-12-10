@@ -12,6 +12,7 @@ if __name__ == "__main__": # permite a inicialização do projeto
     acervo=importar()
     conjuntoEmprestados = emprestados()
     listaAvaliacao = []
+    atualizado=True
 
     while True: # loop para escolha de opções disponíveis no menu, até que o usuário digite 8 para encerrar o loop e sair do programa
         opt=menuInfo()
@@ -19,6 +20,7 @@ if __name__ == "__main__": # permite a inicialização do projeto
         match opt:
             case 1:
                 cadastrar(acervo)
+                atualizado=False
 
             case 2:
                 listar(acervo)
@@ -37,7 +39,11 @@ if __name__ == "__main__": # permite a inicialização do projeto
 
             case 7:
                 registrar(acervo)
+                atualizado=True
 
             case 8:
-                print('Encerrando programa.')
-                break
+                if not atualizado:
+                    print('\nAviso! O acervo está desatualizado, antes de sair lembre-se de salvar as alterações')
+                else:
+                    print('\nEncerrando programa.')
+                    break
