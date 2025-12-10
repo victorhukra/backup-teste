@@ -1,4 +1,4 @@
-def menuInfo():
+def menuInfo(): # função que define o menu com as opções para escolha do usuário
     print("\nMenu de opções")
     print("1 - Cadastrar livro")
     print("2 - Listar livros")
@@ -9,7 +9,7 @@ def menuInfo():
     print("7 - Salvar acervo")
     print("8 - Sair\n")
 
-    while True:
+    while True: # loop para verificação de valores até que o usuário escolha uma opção válida
         try:
             opcao = int(input("Digite a opção desejada: "))
 
@@ -23,5 +23,6 @@ def menuInfo():
             
         except IndexError:
             print('Entrada inválida, digite um número de 1 a 8.')
+
 
 

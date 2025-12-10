@@ -1,0 +1,32 @@
+RELATÓRIO GERAL DA BIBLIOTECA
+--------------------------------
+1. Total de livros cadastrados: 7
+
+2. Livros por categoria:
+- Fantasia (1):
+   - O Senhor dos Anéis (O6891-54)
+- Romance (1):
+   - Dom Casmurro (D2848-99)
+- Ficção Científica (1):
+   - Fundação (F8196-51)
+- Drama (1):
+   - Capitães da Areia (C6148-37)
+- Infantojuvenil (1):
+   - O Pequeno Príncipe (O4510-43)
+- Autobiografia (1):
+   - Diário Do Hospício (D1265-19)
+- Aventura (1):
+   - Joao e Maria (J4975-32)
+
+3. Situação dos livros:
+- Emprestados: 0
+- Disponíveis: 7
+
+4. Média das avaliações por livro:
+- O Senhor dos Anéis (O6891-54): Sem avaliações
+- Dom Casmurro (D2848-99): Sem avaliações
+- Fundação (F8196-51): Sem avaliações
+- Capitães da Areia (C6148-37): Sem avaliações
+- O Pequeno Príncipe (O4510-43): Sem avaliações
+- Diário Do Hospício (D1265-19): Sem avaliações
+- Joao e Maria (J4975-32): 4.5

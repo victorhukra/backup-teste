@@ -1,3 +1,4 @@
+# importações necessárias para o funcionamento do programa
 from menu import menuInfo
 from cadastro import cadastrar, listar
 from busca import buscar
@@ -5,12 +6,14 @@ from emprestimo import registrarEmprestimo
 from devolucoes import devolucoesEmprestimo
 from relatorio import escolherRelatorio
 from registro import registrar
+from leitura import importar
 
-if __name__ == "__main__":
-    acervo=[]
+if __name__ == "__main__": # permite a inicialização do projeto
+    acervo=importar()
     conjuntoEmprestados = set()
+    listaAvaliacao = []
 
-    while True:
+    while True: # loop para escolha de opções disponíveis no menu, até que o usuário digite 8 para encerrar o loop e sair do programa
         opt=menuInfo()
 
         match opt:
@@ -27,10 +30,10 @@ if __name__ == "__main__":
                 registrarEmprestimo(conjuntoEmprestados,acervo)
 
             case 5:
-                devolucoesEmprestimo(conjuntoEmprestados,acervo)
+                devolucoesEmprestimo(conjuntoEmprestados,acervo,listaAvaliacao)
 
             case 6:
-                escolherRelatorio(conjuntoEmprestados,acervo)
+                escolherRelatorio(conjuntoEmprestados,acervo,listaAvaliacao)
 
             case 7:
                 registrar(acervo)
