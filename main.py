@@ -6,11 +6,11 @@ from emprestimo import registrarEmprestimo
 from devolucoes import devolucoesEmprestimo
 from relatorio import escolherRelatorio
 from registro import registrar
-from leitura import importar
+from leitura import importar, emprestados
 
 if __name__ == "__main__": # permite a inicialização do projeto
     acervo=importar()
-    conjuntoEmprestados = set()
+    conjuntoEmprestados = emprestados()
     listaAvaliacao = []
 
     while True: # loop para escolha de opções disponíveis no menu, até que o usuário digite 8 para encerrar o loop e sair do programa

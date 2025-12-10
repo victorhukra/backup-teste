@@ -1,10 +1,12 @@
 from datetime import datetime
 
 def devolucoesEmprestimo(conj,acervo,lista): 
+
     if len(acervo)==0:
         print('\nNão há livros no acervo.')
         return
     
+    encontrado=False
     devolucao=str(input('\nDigite o título do livro a ser devolvido: '))
     for registro in acervo: 
         
@@ -15,8 +17,9 @@ def devolucoesEmprestimo(conj,acervo,lista):
             codigoDevolucao=registro['codigo']
 
             if codigoDevolucao in conj: # verifica se o código daquele livro existe no conjunto de emprestados
-                with open('emprestimos.txt','r+') as arquivo:
+                with open('emprestimos.txt','r') as arquivo:
 
+                    novas_linhas=[]
                     while True:
                         conteudo=arquivo.readline()
 
@@ -25,17 +28,17 @@ def devolucoesEmprestimo(conj,acervo,lista):
                         linha=conteudo.split(';')
 
                         if codigoDevolucao==linha[0]: # verifica se aquele mesmo código é encontrado em algum registro dos empréstimos
-                            status=False
-                            arquivo.write(f'{linha[0]};{linha[1]};{linha[2]};{linha[3]};{status}')
-                            conj.remove(linha[0]) # remove código do conjunto
-                            dataDevolucao=datetime.today() 
-                            dataPrevista=datetime.strptime(linha[3].strip('\n'),'%d-%m-%Y') # faz a leitura de string paradate do arquivo com a data prevista da entrega
-                            dif=(dataDevolucao-dataPrevista).days # calcula diferença entre a data de devolução real e a data prevista
+                            if linha[4].strip()=='Ativo':
+                                conj.remove(linha[0]) # remove código do conjunto
+                                dataDevolucao=datetime.today() 
+                                dataPrevista=datetime.strptime(linha[3].strip('\n'),'%d-%m-%Y') # faz a leitura de string paradate do arquivo com a data prevista da entrega
+                                dif=(dataDevolucao-dataPrevista).days # calcula diferença entre a data de devolução real e a data prevista
+                                novas_linhas.append(f'{linha[0]};{linha[1]};{linha[2]};{linha[3]};Inativo\n')
 
-                            if dif>0: # se a difernça é positiva quer dizer que o livro está atrasado
-                                print(f'\nO livro está atrasado há {dif} dias\nUma taxa de {dif*0.5} será aplicada.')
-                            else:
-                                print(f'\nO livro foi devolvido dentro do prazo\nNenhuma taxa adicional será aplicada.')
+                                if dif>0: # se a difernça é positiva quer dizer que o livro está atrasado
+                                    print(f'\nO livro está atrasado há {dif} dias\nUma taxa de {dif*0.5} será aplicada.')
+                                else:
+                                    print(f'\nO livro foi devolvido dentro do prazo\nNenhuma taxa adicional será aplicada.')
 
                                 escolherAvaliar = str(input(f'Deseja avaliar o livro: {titulo}? (s/n): ')).lower() # opção para avaliar livro
 
@@ -56,13 +59,22 @@ def devolucoesEmprestimo(conj,acervo,lista):
 
                                         except ValueError:
                                             print('\nEntrada inválida. Digite apenas números!')
-                                
+                                    
                                 else:
                                     print('\nVocê preferiu não avaliar o livro!')
 
-                            return # evita que chegue na última menesagem abaixo
-                        
-    print('\nNenhum empréstimo do livro foi encontrado.') # se o código chegou aqui, quer dizer que falhou qualquer uma das verificações acima, e significa que não há empréstimo válido com o livro solicitado
+                                encontrado=True
+                            else:
+                                novas_linhas.append(conteudo)
+                        else:
+                            novas_linhas.append(conteudo)
+                try:
+                    with open('emprestimos.txt','w') as arquivo:
+                        arquivo.writelines(novas_linhas)
+                except Exception:
+                    pass
+    if not encontrado:                    
+        print('\nNenhum empréstimo do livro foi encontrado.') # se o código chegou aqui, quer dizer que falhou qualquer uma das verificações acima, e significa que não há empréstimo válido com o livro solicitado
         
 
                     

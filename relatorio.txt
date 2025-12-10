@@ -1,6 +1,6 @@
 RELATÓRIO GERAL DA BIBLIOTECA
 --------------------------------
-1. Total de livros cadastrados: 7
+1. Total de livros cadastrados: 6
 
 2. Livros por categoria:
 - Fantasia (1):
@@ -15,12 +15,10 @@ RELATÓRIO GERAL DA BIBLIOTECA
    - O Pequeno Príncipe (O4510-43)
 - Autobiografia (1):
    - Diário Do Hospício (D1265-19)
-- Aventura (1):
-   - Joao e Maria (J4975-32)
 
 3. Situação dos livros:
 - Emprestados: 0
-- Disponíveis: 7
+- Disponíveis: 6
 
 4. Média das avaliações por livro:
 - O Senhor dos Anéis (O6891-54): Sem avaliações
@@ -29,4 +27,3 @@ RELATÓRIO GERAL DA BIBLIOTECA
 - Capitães da Areia (C6148-37): Sem avaliações
 - O Pequeno Príncipe (O4510-43): Sem avaliações
 - Diário Do Hospício (D1265-19): Sem avaliações
-- Joao e Maria (J4975-32): 4.5

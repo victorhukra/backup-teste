@@ -16,3 +16,18 @@ def importar():
             return acervo
     except FileNotFoundError:
         print('Acervo não encontrado')
+
+def emprestados():
+    emprestados=set()
+    try:
+        with open('emprestimos.txt','r') as arquivo: # faz a leitura dos empréstimos e se o status for ativo, salva no conjunto de livros já emprestados
+            while True:
+                linha=arquivo.readline()
+                if not linha:
+                    break
+                conteudo=linha.split(';')
+                if conteudo[4].strip()=='Ativo':
+                    emprestados.add(conteudo[0])
+            return emprestados
+    except FileNotFoundError:
+        print('Registro de empréstimos não encontrado')

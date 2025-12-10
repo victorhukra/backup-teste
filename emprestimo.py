@@ -33,11 +33,9 @@ def registrarEmprestimo(conj, acervo): # função responsável pelo registro do 
         print('Este livro já foi emprestado.')
         return
 
-    status=True
-    emprestimo = (codigoEncontrado, nomeUsuario, dataEmprestimo, dataPrevistaDevolucao, status) # definição do empréstimo passando informações que serão utilizadas na manipulação de arquivos .txt
+    emprestimo = (codigoEncontrado, nomeUsuario, dataEmprestimo, dataPrevistaDevolucao, 'Ativo') # definição do empréstimo passando informações que serão utilizadas na manipulação de arquivos .txt
     conj.add(codigoEncontrado)
 
-    
     repetido=False
     try:
         with open('usuarios.txt','r') as file:
